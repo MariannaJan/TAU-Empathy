@@ -1,6 +1,6 @@
-package empathy.tau;
+package empathy.tau.domain;
 
-class Interaction {
+public class Interaction {
     public String pageNo;
     public int empathyValue;
     public int sanityValue;

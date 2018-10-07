@@ -1,3 +1,4 @@
-/home/PJWSTK/s14292/TAU/Task1/task1.tau/src/main/java/empathy/tau/DataBaseImpl.java
-/home/PJWSTK/s14292/TAU/Task1/task1.tau/src/main/java/empathy/tau/InteractionManager.java
-/home/PJWSTK/s14292/TAU/Task1/task1.tau/src/main/java/empathy/tau/Interaction.java
+/home/PJWSTK/s14292/TAU/Task1/task1.tau/src/main/java/empathy/tau/domain/Interaction.java
+/home/PJWSTK/s14292/TAU/Task1/task1.tau/src/main/java/empathy/tau/service/IInteractionManager.java
+/home/PJWSTK/s14292/TAU/Task1/task1.tau/src/main/java/empathy/tau/service/DataBaseImpl.java
+/home/PJWSTK/s14292/TAU/Task1/task1.tau/src/main/java/empathy/tau/service/InteractionManagerImpl.java

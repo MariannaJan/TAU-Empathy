@@ -1,5 +1,7 @@
 package empathy.tau.domain;
 
+import java.util.List;
+
 public class Interaction {
     public String pageNo;
     public int empathyValue;
@@ -8,7 +10,7 @@ public class Interaction {
     public String optionalJournalEntry;
     public int empathyTreshold;
     public int sanityTreshold;
-    public String[] pagesLocked;
+    public List<String> pagesLocked;
     public String takeItemID;
     public Boolean OneTimeInteractionFlag;
     public String RemoveItemId;

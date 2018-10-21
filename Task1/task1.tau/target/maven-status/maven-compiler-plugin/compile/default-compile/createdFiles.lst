@@ -1,4 +1,1 @@
-empathy/tau/domain/Interaction.class
-empathy/tau/service/InteractionManagerImpl.class
-empathy/tau/service/IInteractionManager.class
-empathy/tau/service/DataBaseImpl.class
+empathy\tau\service\DataBaseImpl.class

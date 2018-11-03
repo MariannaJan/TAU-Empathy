@@ -1,23 +1,50 @@
 package empathy.tau.service;
-
 import empathy.tau.domain.Interaction;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Date;
+import java.util.HashMap; 
 
 public class InteractionManagerImpl implements IInteractionManager {
 
-    public List<Interaction> dataBase;
+    public DataBaseImpl db;
+    public HashMap<Integer, Interaction> dataBase;
+
+    public HashMap<Integer, Date> readTimes;
+    public HashMap<Integer, Date> createTimes;
+    public HashMap<Integer, Date> updateTimes;
+
+    public boolean saveReadTimes;
+    public boolean saveCreateTimes;
+    public boolean saveUpdateTimes; 
+
 
     InteractionManagerImpl() {
-        dataBase = new ArrayList<>();
+        this.saveReadTimes = true;
+        this.saveCreateTimes = true;
+        this.saveUpdateTimes = true;
+        db = new DataBaseImpl();
+        dataBase = db.dataBase;
+    }
+
+    public void toggleSaveReadTimes() {
+        this.saveReadTimes = !this.saveReadTimes;
+    }
+
+    public void toggleSaveCreateTimes() {
+        this.saveCreateTimes = !this.saveCreateTimes;
+    }
+
+    public void toggleUpdateTimes() {
+        this.saveUpdateTimes = !this.saveUpdateTimes;
     }
 
     public Integer create (Interaction interaction) {
         if (interaction == null) {
             throw new IllegalArgumentException("Create argument cannot be null");
         }
-        dataBase.add(interaction);
-        Integer interactionIndex = dataBase.size()-1;
+        Integer interactionIndex = db.autoId;
+        db.autoId +=1;
+        dataBase.put(interactionIndex, interaction);
         return interactionIndex;
         
     }
@@ -28,7 +55,7 @@ public class InteractionManagerImpl implements IInteractionManager {
         }
         else {
             if (id < dataBase.size()) {
-                dataBase.set(id, interaction);
+                dataBase.put(id, interaction);
             }
         }
      }
@@ -38,7 +65,7 @@ public class InteractionManagerImpl implements IInteractionManager {
             throw new IllegalArgumentException("Id cannot be null");
         }
         else {
-            this.dataBase.remove(id.intValue());
+            this.dataBase.remove(id);
         }
      }
 
@@ -48,11 +75,10 @@ public class InteractionManagerImpl implements IInteractionManager {
         }
         else {
             return dataBase.get(id);
-        }
-        
+        }    
     }
 
-    public List<Interaction> getAll () {
+    public HashMap<Integer, Interaction> getAll () {
         return dataBase;
     }
 }

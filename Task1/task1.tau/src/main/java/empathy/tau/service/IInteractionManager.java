@@ -1,7 +1,7 @@
 package empathy.tau.service;
 
 import empathy.tau.domain.Interaction;
-import java.util.List;
+import java.util.HashMap;
 
 
 public interface IInteractionManager {
@@ -15,5 +15,5 @@ public interface IInteractionManager {
 
     public Interaction getById (Integer id);
 
-    public List<Interaction> getAll ();
+    public HashMap<Integer, Interaction> getAll ();
 }

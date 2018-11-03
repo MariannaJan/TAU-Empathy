@@ -4,19 +4,29 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.InjectMocks;
+import org.mockito.MockitoAnnotations;
+import static org.mockito.Mockito.*;
+import java.util.Date;
 
 import empathy.tau.domain.Interaction;
 
-@RunWith(JUnit4.class)
+@RunWith(MockitoJUnitRunner.class)
 public class InteractionManagerImplTest {
+     
+    @Mock 
+    TimeSource timeSource;
 
+    @InjectMocks
     InteractionManagerImpl interactionManager;
     Interaction interaction;
 
     @Before
     public void before() {
+        MockitoAnnotations.initMocks(this);
         interactionManager = new InteractionManagerImpl();
-        //interaction = new Interaction("page1", 50, 80, "Interaction", "", 15, 60, "mobile", true, "", false );
         interaction = new Interaction();
         
     }   
@@ -103,4 +113,17 @@ public class InteractionManagerImplTest {
         assertEquals(exemple1, interactionManager.getById(0));
         assertEquals(exemple2, interactionManager.getById(1));
     }
+    
+
+    @Test
+    public void isReadTimeSavedIfRequired() {
+        when(timeSource.getCurrentDate()).thenReturn(new Date());
+        interactionManager.db.setTimeSource(timeSource);
+        Integer addedId = interactionManager.create(interaction);
+        System.out.println(addedId);
+        // interactionManager.readTimes.get(addedId);
+
+    }
+
+
 }

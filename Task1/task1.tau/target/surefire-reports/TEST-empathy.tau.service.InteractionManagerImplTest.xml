@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="empathy.tau.service.InteractionManagerImplTest" time="0.012" errors="0" skipped="0">
+<testsuite tests="13" failures="0" name="empathy.tau.service.InteractionManagerImplTest" time="0.023" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -65,16 +65,17 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="createArgumentCannotBeNull" time="0.008"/>
-  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="interactionCorrectlyUpdated" time="0"/>
-  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="getAllReturnZeroIfEmpty" time="0"/>
-  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="updateIdCannotBeNull" time="0.004"/>
-  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="updateInteractionCannotBeNull" time="0"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="createArgumentCannotBeNull" time="0.003"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="interactionCorrectlyUpdated" time="0.001"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="getAllReturnZeroIfEmpty" time="0.001"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="updateIdCannotBeNull" time="0.002"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="updateInteractionCannotBeNull" time="0.001"/>
   <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="getAllReturnsAllInteractions" time="0"/>
   <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="deleteIdCannotBeNull" time="0"/>
   <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="createInteractionReturnsId" time="0"/>
-  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="getIdCannotBeNull" time="0"/>
-  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="returnInteractionById" time="0"/>
-  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="getAllReturnsCorrectInteractions" time="0"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="getIdCannotBeNull" time="0.001"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="returnInteractionById" time="0.001"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="isReadTimeSavedIfRequired" time="0.012"/>
+  <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="getAllReturnsCorrectInteractions" time="0.001"/>
   <testcase classname="empathy.tau.service.InteractionManagerImplTest" name="interactionSuccesfullyDeleted" time="0"/>
 </testsuite>

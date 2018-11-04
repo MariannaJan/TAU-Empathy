@@ -143,5 +143,11 @@ public class InteractionManagerImplTest {
         assertEquals(new Date(118,10,4), interactionManager.updateTimes.get(createdId));
     }
 
-
+    @Test
+    public void isGetTimeInfoWorking() {
+        when(timeSource.getCurrentDate()).thenReturn(new Date(118,10,4));
+        interactionManager.db.setTimeSource(timeSource);
+        Integer addedId = interactionManager.create(interaction);
+        assertEquals(new Date(118,10,4), interactionManager.getTimeInfoById(addedId)[0]);
+    }
 }

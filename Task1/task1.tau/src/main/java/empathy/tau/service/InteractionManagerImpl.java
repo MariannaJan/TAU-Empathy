@@ -93,4 +93,9 @@ public class InteractionManagerImpl implements IInteractionManager {
     public HashMap<Integer, Interaction> getAll () {
         return dataBase;
     }
+
+    public Date[] getTimeInfoById(Integer id) {
+        Date timeInfo[] = new Date[3];
+        return timeInfo;
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="1" name="tau2empathy.RunCucumberTest" time="0.138" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="tau2empathy.RunCucumberTest" time="0.294" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -65,30 +65,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Search interaction description by regex" name="Use simple regex" time="0.138">
-    <failure message="expected:&lt;1&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;1&gt; but was:&lt;0&gt;
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:631)
-	at tau2empathy.EmpathyStepDefs.we_get_list_with_one_interaction_id(EmpathyStepDefs.java:38)
-	at ✽.we get list with one interaction id(tau2empathy/empathyBdd.feature:8)
-</failure>
-    <system-out>Feature: Search interaction description by regex
-
-  Scenario: Use simple regex                                                  &amp;#27;[90m# tau2empathy/empathyBdd.feature:3&amp;#27;[0m
-As a: Programmer
-    &amp;#27;[32mGiven &amp;#27;[0m&amp;#27;[32mwe have one interaction in db with description containing &apos;default&apos;&amp;#27;[0m &amp;#27;[90m# EmpathyStepDefs.we_have_one_interaction_in_db_with_description_containing_default()&amp;#27;[0m
-    &amp;#27;[32mWhen &amp;#27;[0m&amp;#27;[32mwe search by regex for &apos;default&apos;&amp;#27;[0m                                     &amp;#27;[90m# EmpathyStepDefs.we_search_by_regex_for_default()&amp;#27;[0m
-    &amp;#27;[31mThen &amp;#27;[0m&amp;#27;[31mwe get list with one interaction id&amp;#27;[0m                                  &amp;#27;[90m# EmpathyStepDefs.we_get_list_with_one_interaction_id()&amp;#27;[0m
-      &amp;#27;[31mjava.lang.AssertionError: expected:&lt;1&gt; but was:&lt;0&gt;
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:631)
-	at tau2empathy.EmpathyStepDefs.we_get_list_with_one_interaction_id(EmpathyStepDefs.java:38)
-	at ?.we get list with one interaction id(tau2empathy/empathyBdd.feature:8)
-&amp;#27;[0m
-</system-out>
-  </testcase>
+  <testcase classname="Search interaction description by regex" name="Use simple regex" time="0.27"/>
+  <testcase classname="Search interaction description by regex" name="Use simple regex 2" time="0.006"/>
+  <testcase classname="Search interaction description by regex" name="delete 2 Interactions according to list of ids" time="0"/>
+  <testcase classname="Search interaction description by regex" name="Can&apos;t delete interaction with no matching id" time="0.018"/>
 </testsuite>

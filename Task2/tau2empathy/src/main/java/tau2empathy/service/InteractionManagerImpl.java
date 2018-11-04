@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class InteractionManagerImpl implements IInteractionManager {
 
@@ -117,6 +119,21 @@ public class InteractionManagerImpl implements IInteractionManager {
 
     public List<Integer> searchByRegex(String regex) {
         List<Integer> interactionIds = new ArrayList<Integer>();
+        Pattern p = Pattern.compile(regex);
+        
+        interactionIds = dataBase.entrySet()
+            .stream()
+            .filter(x-> p.matcher(x.getValue().interactionDescription)
+            .find()==true)
+            .map(x->x.getKey())
+            .collect(Collectors.toList());
+
+        System.out.println(interactionIds.size());
+        
         return interactionIds;
+    }
+
+    public void deleteInteractionsByList(List<Integer> ids) {
+        ids.forEach(id -> delete(id));
     }
 }

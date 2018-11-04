@@ -16,6 +16,16 @@ class DataBaseImpl {
     DataBaseImpl() {
         this.autoId = 0;
         this.dataBase = new HashMap<>();
+        this.readTimes = new HashMap<>();
+        this.createTimes = new HashMap<>();
+        this.updateTimes = new HashMap<>();
+        this.timeSource = new TimeSource(){
+        
+            @Override
+            public Date getCurrentDate() {
+                return new Date();
+            }
+        };
     }
 
     void setTimeSource(TimeSource ts) {

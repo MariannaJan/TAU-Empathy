@@ -74,6 +74,10 @@ public class InteractionManagerImpl implements IInteractionManager {
             throw new IllegalArgumentException("Id cannot be null");
         }
         else {
+            if (saveReadTimes) {
+                readTimes = db.readTimes;
+                readTimes.put(id, db.timeSource.getCurrentDate());
+            }
             return dataBase.get(id);
         }    
     }

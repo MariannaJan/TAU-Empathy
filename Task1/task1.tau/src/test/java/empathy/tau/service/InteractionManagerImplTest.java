@@ -117,12 +117,11 @@ public class InteractionManagerImplTest {
 
     @Test
     public void isReadTimeSavedIfRequired() {
-        when(timeSource.getCurrentDate()).thenReturn(new Date());
+        when(timeSource.getCurrentDate()).thenReturn(new Date(118,10,4));
         interactionManager.db.setTimeSource(timeSource);
         Integer addedId = interactionManager.create(interaction);
-        System.out.println(addedId);
-        // interactionManager.readTimes.get(addedId);
-
+        interactionManager.getById(addedId);
+        assertEquals(interactionManager.readTimes.get(addedId), new Date(118,10,4));
     }
 
 

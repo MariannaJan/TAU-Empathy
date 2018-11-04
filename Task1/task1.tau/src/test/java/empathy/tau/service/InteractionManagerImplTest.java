@@ -124,5 +124,13 @@ public class InteractionManagerImplTest {
         assertEquals(interactionManager.readTimes.get(addedId), new Date(118,10,4));
     }
 
+    @Test
+    public void isCreateTimeSavedIfRequired() {
+        when(timeSource.getCurrentDate()).thenReturn(new Date(118,10,4));
+        interactionManager.db.setTimeSource(timeSource);
+        Integer addedId = interactionManager.create(interaction);
+        assertEquals(interactionManager.createTimes.get(addedId), new Date(118,10,4));
+    }
+
 
 }

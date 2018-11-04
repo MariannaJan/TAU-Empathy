@@ -45,6 +45,10 @@ public class InteractionManagerImpl implements IInteractionManager {
         Integer interactionIndex = db.autoId;
         db.autoId +=1;
         dataBase.put(interactionIndex, interaction);
+        if (saveCreateTimes) {
+            createTimes = db.createTimes;
+            createTimes.put(interactionIndex, db.timeSource.getCurrentDate());
+        }
         return interactionIndex;
         
     }

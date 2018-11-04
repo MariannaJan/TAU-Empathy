@@ -26,16 +26,27 @@ public class InteractionManagerImpl implements IInteractionManager {
         dataBase = db.dataBase;
     }
 
-    public void toggleSaveReadTimes() {
-        this.saveReadTimes = !this.saveReadTimes;
+    public void turnOnSaveReadTimes() {
+        this.saveReadTimes = true;
+    }
+    public void turnOffSaveReadTimes() {
+        this.saveReadTimes = false;
     }
 
-    public void toggleSaveCreateTimes() {
-        this.saveCreateTimes = !this.saveCreateTimes;
+    public void turnOnSaveCreateTimes() {
+        this.saveCreateTimes = true;
     }
 
-    public void toggleUpdateTimes() {
-        this.saveUpdateTimes = !this.saveUpdateTimes;
+    public void turnOffSaveCreateTimes() {
+        this.saveCreateTimes = false;
+    }
+
+    public void turnOnSaveUpdateTimes() {
+        this.saveUpdateTimes = true;
+    }
+
+    public void turnOffSaveUpdateTimes() {
+        this.saveUpdateTimes = false;
     }
 
     public Integer create (Interaction interaction) {

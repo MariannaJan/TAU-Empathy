@@ -121,7 +121,7 @@ public class InteractionManagerImplTest {
         interactionManager.db.setTimeSource(timeSource);
         Integer addedId = interactionManager.create(interaction);
         interactionManager.getById(addedId);
-        assertEquals(interactionManager.readTimes.get(addedId), new Date(118,10,4));
+        assertEquals(new Date(118,10,4), interactionManager.readTimes.get(addedId));
     }
 
     @Test
@@ -129,7 +129,18 @@ public class InteractionManagerImplTest {
         when(timeSource.getCurrentDate()).thenReturn(new Date(118,10,4));
         interactionManager.db.setTimeSource(timeSource);
         Integer addedId = interactionManager.create(interaction);
-        assertEquals(interactionManager.createTimes.get(addedId), new Date(118,10,4));
+        assertEquals(new Date(118,10,4), interactionManager.createTimes.get(addedId));
+    }
+
+    @Test
+    public void isUpdateTimeSavedIfRequired() {
+        when(timeSource.getCurrentDate()).thenReturn(new Date(118,10,4));
+        interactionManager.db.setTimeSource(timeSource);
+        Interaction exemple = new Interaction();
+        Integer createdId = interactionManager.create(exemple);
+        Interaction updatedExemple = new Interaction();
+        interactionManager.update(createdId, updatedExemple);
+        assertEquals(new Date(118,10,4), interactionManager.updateTimes.get(createdId));
     }
 
 

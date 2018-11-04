@@ -1,8 +1,10 @@
 package tau2empathy.service;
 import tau2empathy.domain.Interaction;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap; 
+import java.util.HashMap;
+import java.util.List;
 
 public class InteractionManagerImpl implements IInteractionManager {
 
@@ -18,7 +20,7 @@ public class InteractionManagerImpl implements IInteractionManager {
     public boolean saveUpdateTimes; 
 
 
-    InteractionManagerImpl() {
+    public InteractionManagerImpl() {
         this.saveReadTimes = true;
         this.saveCreateTimes = true;
         this.saveUpdateTimes = true;
@@ -111,5 +113,10 @@ public class InteractionManagerImpl implements IInteractionManager {
             timeInfo[1] = db.readTimes.get(id);
             timeInfo[2] = db.updateTimes.get(id);
         return timeInfo;
+    }
+
+    public List<Integer> searchByRegex(String regex) {
+        List<Integer> interactionIds = new ArrayList<Integer>();
+        return interactionIds;
     }
 }

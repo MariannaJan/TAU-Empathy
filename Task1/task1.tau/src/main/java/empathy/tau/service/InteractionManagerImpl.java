@@ -97,6 +97,8 @@ public class InteractionManagerImpl implements IInteractionManager {
     public Date[] getTimeInfoById(Integer id) {
         Date timeInfo[] = new Date[3];
             timeInfo[0] = db.createTimes.get(id);
+            timeInfo[1] = db.readTimes.get(id);
+            timeInfo[2] = db.updateTimes.get(id);
         return timeInfo;
     }
 }

@@ -144,10 +144,30 @@ public class InteractionManagerImplTest {
     }
 
     @Test
-    public void isGetTimeInfoWorking() {
+    public void isGetTimeInfoWorkingForCreate() {
         when(timeSource.getCurrentDate()).thenReturn(new Date(118,10,4));
         interactionManager.db.setTimeSource(timeSource);
         Integer addedId = interactionManager.create(interaction);
         assertEquals(new Date(118,10,4), interactionManager.getTimeInfoById(addedId)[0]);
+    }
+
+    @Test
+    public void isGetTimeInfoWorkingForRead() {
+        when(timeSource.getCurrentDate()).thenReturn(new Date(118,10,4));
+        interactionManager.db.setTimeSource(timeSource);
+        Integer addedId = interactionManager.create(interaction);
+        interactionManager.getById(addedId);
+        assertEquals(new Date(118,10,4), interactionManager.getTimeInfoById(addedId)[1]);
+    }
+
+    @Test
+    public void isGetTimeInfoWorkingForUpdate() {
+        when(timeSource.getCurrentDate()).thenReturn(new Date(118,10,4));
+        interactionManager.db.setTimeSource(timeSource);
+        Interaction exemple = new Interaction();
+        Integer createdId = interactionManager.create(exemple);
+        Interaction updatedExemple = new Interaction();
+        interactionManager.update(createdId, updatedExemple);
+        assertEquals(new Date(118,10,4), interactionManager.getTimeInfoById(createdId)[2]);
     }
 }

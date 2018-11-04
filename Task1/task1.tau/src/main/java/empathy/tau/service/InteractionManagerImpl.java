@@ -60,6 +60,10 @@ public class InteractionManagerImpl implements IInteractionManager {
         else {
             if (id < dataBase.size()) {
                 dataBase.put(id, interaction);
+                if (saveUpdateTimes) {
+                    updateTimes = db.updateTimes;
+                    updateTimes.put(id, db.timeSource.getCurrentDate());
+                }
             }
         }
      }

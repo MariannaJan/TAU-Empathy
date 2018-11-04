@@ -65,11 +65,9 @@ public class EmpathyStepDefs {
         }
     }
 
-    @When("^we delete two of them$")
-    public void we_delete_two_of_them() throws Exception {
-        List<Integer> ids = new ArrayList<>();
-        ids.add(0);
-        ids.add(1);
+    @When("^we delete two of them:$")
+    public void we_delete_two_of_them(List<Integer> arg1) throws Exception {
+        List<Integer> ids = arg1;
         manager.deleteInteractionsByList(ids);
     }
 
@@ -79,10 +77,9 @@ public class EmpathyStepDefs {
     }
 
 
-    @When("^we try to delete interaction with id (\\d+)$")
-    public void we_try_to_delete_interaction_with_id(int arg1) throws Exception {
-        List<Integer> ids = new ArrayList<>();
-        ids.add(999);
+    @When("^we try to delete interaction with id:$")
+    public void we_try_to_delete_interaction_with_id(List<Integer> arg1) throws Exception {
+        List<Integer> ids = arg1;
         manager.deleteInteractionsByList(ids);
     }
 

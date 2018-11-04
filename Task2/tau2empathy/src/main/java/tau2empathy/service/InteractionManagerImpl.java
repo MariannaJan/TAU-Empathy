@@ -127,8 +127,6 @@ public class InteractionManagerImpl implements IInteractionManager {
             .find()==true)
             .map(x->x.getKey())
             .collect(Collectors.toList());
-
-        System.out.println(interactionIds.size());
         
         return interactionIds;
     }
